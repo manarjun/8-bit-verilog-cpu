@@ -2,27 +2,48 @@
 
 This project will build a simple 8-bit CPU while learning Verilog, digital logic, computer architecture, and hardware verification.
 
-Roadmap
+## Repository Structure
 
-- Multiplexer
-- Full adder
-- 8-bit ALU
-- Registers
-- Register file
-- Program counter
-- Control unit
-- Instruction memory
-- Data memory
-- Complete CPU
+```
+rtl/                    # RTL (Register Transfer Level) designs
+├── mux_2_to_1.v       # 2-to-1 multiplexer implementation
 
-Completed Components
+testbenches/            # Testbenches for verification
+├── mux_2_to_1_tb.v    # Testbench for 2-to-1 multiplexer
 
-- 2-to-1 multiplexer
+docs/                   # Documentation
+programs/               # Example programs and assembly
+diagrams/               # Circuit diagrams and schematics
+```
 
-Running simulations
+## Roadmap
 
-This repository will include testbenches and simulation instructions as components are developed. Typically you'll run simulations with a Verilog simulator (e.g., Icarus Verilog, ModelSim, QuestaSim) using commands such as `iverilog` and `vvp` or your simulator's GUI/CLI. Detailed run instructions will be added alongside each component.
+- [x] 2-to-1 Multiplexer
+- [ ] Full adder
+- [ ] 8-bit ALU
+- [ ] Registers
+- [ ] Register file
+- [ ] Program counter
+- [ ] Control unit
+- [ ] Instruction memory
+- [ ] Data memory
+- [ ] Complete CPU
 
-Status
+## Completed Components
+
+- **2-to-1 Multiplexer**: Fully implemented and tested with comprehensive testbench
+
+## Running Simulations
+
+To run the 2-to-1 multiplexer testbench using Icarus Verilog:
+
+```bash
+iverilog -o sim rtl/mux_2_to_1.v testbenches/mux_2_to_1_tb.v
+vvp sim
+```
+
+For other simulators (ModelSim, QuestaS[...], Vivado, etc.), consult their documentation for compilation and simulation commands.
+
+## Status
 
 This project is under active development.
