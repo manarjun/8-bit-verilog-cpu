@@ -118,7 +118,7 @@ The design is elegant and demonstrates **hierarchical thinking** in digital desi
 With three inputs (a, b, carry_in), there are 2³ = 8 combinations:
 
 | a | b | carry_in | sum | carry_out | Explanation |
-|---|---|----------|-----|-----------|------------|
+|---|---|----------|-----|-----------|-------------|
 | 0 | 0 | 0 | 0 | 0 | 0+0+0 = 0 |
 | 0 | 0 | 1 | 1 | 0 | 0+0+1 = 1 |
 | 0 | 1 | 0 | 1 | 0 | 0+1+0 = 1 |
