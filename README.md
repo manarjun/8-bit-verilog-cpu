@@ -8,10 +8,12 @@ This project will build a simple 8-bit CPU while learning Verilog, digital logic
 rtl/                    # RTL (Register Transfer Level) designs
 ├── mux_2_to_1.v       # 2-to-1 multiplexer implementation
 ├── half_adder.v       # 1-bit half adder (sum and carry)
+├── full_adder.v       # 1-bit full adder (sum and carry with carry_in)
 
 testbenches/            # Testbenches for verification
 ├── mux_2_to_1_tb.v    # Testbench for 2-to-1 multiplexer
 ├── half_adder_tb.v    # Testbench for half adder
+├── full_adder_tb.v    # Testbench for full adder
 
 docs/                   # Documentation
 ├── learning-log.md    # Learning journal and concepts explained
@@ -23,7 +25,7 @@ diagrams/               # Circuit diagrams and schematics
 
 - [x] 2-to-1 Multiplexer
 - [x] Half Adder
-- [ ] Full Adder
+- [x] Full Adder
 - [ ] 8-bit Ripple-Carry Adder
 - [ ] 8-bit ALU
 - [ ] Registers
@@ -38,6 +40,7 @@ diagrams/               # Circuit diagrams and schematics
 
 - **2-to-1 Multiplexer**: Fully implemented and tested with comprehensive testbench
 - **Half Adder**: Implements 1-bit binary addition using XOR (sum) and AND (carry) gates
+- **Full Adder**: Adds three 1-bit inputs (a, b, carry_in) using two half adders and an OR gate; enables multi-bit addition
 
 ## Running Simulations
 
@@ -55,7 +58,14 @@ iverilog -o sim rtl/half_adder.v testbenches/half_adder_tb.v
 vvp sim
 ```
 
-For other simulators (ModelSim, QuestaS[...], Vivado, etc.), consult their documentation for compilation and simulation commands.
+To run the full adder testbench using Icarus Verilog:
+
+```bash
+iverilog -o sim rtl/half_adder.v rtl/full_adder.v testbenches/full_adder_tb.v
+vvp sim
+```
+
+For other simulators (ModelSim, Questa, Vivado, etc.), consult their documentation for compilation and simulation commands.
 
 ## Status
 
